@@ -1,3 +1,7 @@
+## Inversion of Control
+- A design principle
+- Instead of directly controlling and calling functions in another part, the control is inverted (shifted) to a central component or framework
+
 ## Middleware
 
 ### Definition
@@ -5,7 +9,7 @@
 - Have access to request and response objects
 - Can call the next middleware function in the stack
 
-## Use Cases
+### Use Cases
 Middleware is beneficial in various scenarios, including but not limited to:
 
 - **Authentication and Authorization**: Verify user identity and permissions before allowing access to specific routes
@@ -14,7 +18,7 @@ Middleware is beneficial in various scenarios, including but not limited to:
 - **Logging and Analytics**: Log incoming requests, monitor performance, and track usage
 - **Request Transformation**: Modify or enhance request data for route handlers
 
-## Best Practices
+### Best Practices
 - Keep middleware functions focused on a single responsibility
 - Avoid blocking operations
 - Make sure to place middleware in the correct order in module configuration
