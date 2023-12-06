@@ -14,6 +14,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
       .json({
         timestamp: new Date().toISOString(),
         path: request.url,
+        error: exception.message ?? 'Internal error'
       });
   }
 }

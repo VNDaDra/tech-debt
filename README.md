@@ -1,11 +1,14 @@
-## 1.Inversion of Control
+### 1.1.Inversion of Control
 - A design principle
 - Instead of directly controlling and calling functions in another part, the control is inverted (shifted) to a central component or framework
+### 1.2 Dependency Injection
+- A design pattern
+- Providing external dependencies to a component rather than letting the component create them
 
 ## 2.Middleware
 
 ### 2.1 Definition
-- Middleware is a function that can be executed before a request reaches a route handler.
+- Middleware is a function that can be executed before a request reaches a route handler
 - Have access to request and response objects
 - Can call the next middleware function in the stack
 
@@ -23,9 +26,9 @@ Middleware is beneficial in various scenarios, including but not limited to:
 - Avoid blocking operations
 - Make sure to place middleware in the correct order in module configuration
 
-## 3.1 Exception filter
+## 3.Exception filter
 
-### Definition
+### 3.1 Definition
 - A centralized location to handle exceptions that may occur during the processing of a request
 - Has built-in and custom filter
 
@@ -38,6 +41,9 @@ Middleware is beneficial in various scenarios, including but not limited to:
 ### 3.3 Best Practices
 - Centralized logging of exceptions, making it easier to track and analyze errors across the application
 - Ensure that exception filters provide consistent and standardized
+
+## 4.Pipes
+
 
 ## 5.Interceptor
 
@@ -52,4 +58,4 @@ Middleware is beneficial in various scenarios, including but not limited to:
 
 ### 5.3 Best Practices
 - Aware of the order in which they are applied, as it can impact the overall behavior of the application
-- Create interceptors that are tailored to specific use cases, ensuring that their logic aligns with the intended purpose.
+- Create interceptors that are tailored to specific use cases, ensuring that their logic aligns with the intended purpose

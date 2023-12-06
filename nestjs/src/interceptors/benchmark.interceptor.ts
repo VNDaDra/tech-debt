@@ -10,8 +10,8 @@ export class BenchmarkInterceptor implements NestInterceptor {
       .handle()
       .pipe(
         tap(() => {
-            const t1 = performance.now();
-            console.log(`Request took ${t1 - t0} milliseconds.`)
+          const t1 = performance.now();
+          console.log(`Request took ${t1 - t0} milliseconds.`)
         }),
       );
   }
