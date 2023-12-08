@@ -71,10 +71,10 @@ Middleware is beneficial in various scenarios, including but not limited to:
 ## 6.Configuration
 The ConfigModule is an component of NestJS that facilitates the management and access of configuration parameters throughout an application.
 
-### 6.1 Important options
+### 6.1 Notable options
 - **envFilePath**: specify multiple paths for .env
 - **isGlobal**: register as a global module
 - **cache**: cache value in memory to improve performance 
-- **load**: cache value in memory to improve performance 
+- **load**: load custom configuration file
 ### 6.2 Config service
 Just inject `ConfigService` using constructor injection
