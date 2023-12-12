@@ -1,11 +1,10 @@
-import { SystemLogger } from "./logger/system-logger.service";
 import { UserLogger } from "./logger/user-logging.service";
+import { PaymentWithoutInjection } from "./payment/payment-without-injection";
 import { Payment } from "./payment/payment.service";
 
-const systemLogger = new SystemLogger();
 const userLogger = new UserLogger();
 
-const systemPayment = new Payment(systemLogger);
+const systemPayment = new PaymentWithoutInjection();
 const userPayment = new Payment(userLogger);
 
 const amountToPay = 5;

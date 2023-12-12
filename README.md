@@ -68,6 +68,29 @@ Middleware is beneficial in various scenarios, including but not limited to:
 - Aware of the order in which they are applied, as it can impact the overall behavior of the application
 - Create interceptors that are tailored to specific use cases, ensuring that their logic aligns with the intended purpose
 
+## 6.Custom provider
+NestJS allow to define Custom provider to handle special case in several ways
+- **useValue**: Inject constant value, external library into Nest container
+- **useClass**: Dynamic determine a class that a token should resolve to
+- **useFactory**: Using factory function to create providers dynamically
+- **useExisting**: Creating aliases for existing providers. This creates two ways to access the same provider
+
+## 7.Circular dependency
+Nest enables resolving circular dependencies between providers in two ways
+- **Forward reference**: If 2 services depend each other, both sides can use @Inject() and the forwardRef() utility to resolve
+```
+  @Inject(forwardRef(() => CommonService))
+```
+- **Module forward reference**: Using forwardRef() utility on both sides of the modules association
+```
+@Module({
+  imports: [forwardRef(() => CommonModule)],
+})
+```
+
+## 8.Execution context
+
+
 ## 6.Configuration
 The ConfigModule is an component of NestJS that facilitates the management and access of configuration parameters throughout an application.
 
