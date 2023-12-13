@@ -89,15 +89,36 @@ Nest enables resolving circular dependencies between providers in two ways
 ```
 
 ## 8.Execution context
+Nest has two classes which provide information about current execution
+### 8.1 ArgumentsHost
+A class for retrieving the arguments being passed to a handler
+- getType(): return request method (http, rpc, graphql)
+- switchToHttp(): return an HttpArgumentsHost instance that contain request, response, next object
+### 8.2 ExecutionContext 
+Extend from ArgumentHost, process additional detail about the current execution process
+- getClass(): return type of controller
+- getHandler(): return reference to a handler (method)
+### 8.3 Reflection and metadata
+Attach custom metadata to route handlers through decorators
+- SetMetadata: attach value to metadata key
+- Reflector.get(): access the metadata of controller or handler
+- Reflector.getAllAndOverride(): override metadata has the same key
+- Reflector.getAllAndMerge(): merge metadata has the same key
 
+## 9. Lifecycle event
+- OnModuleInit: Triggered once the module initialized
+- OnApplicationBootstrap: Triggered after all modules are loaded, but before listening for connections
+- OnModuleDestroy: Triggered once the module destroyed
+- BeforeApplicationShutdown: Trigger after all OnModuleDestroy has completed. After that, app.close() called.
+- OnApplicationShutdown: Triggered after connection close (app.close() called)
 
-## 6.Configuration
+## 10.Configuration
 The ConfigModule is an component of NestJS that facilitates the management and access of configuration parameters throughout an application.
 
-### 6.1 Notable options
+### 10.1 Notable options
 - **envFilePath**: specify multiple paths for .env
 - **isGlobal**: register as a global module
 - **cache**: cache value in memory to improve performance 
 - **load**: load custom configuration file
-### 6.2 Config service
+### 10.2 Config service
 Just inject `ConfigService` using constructor injection

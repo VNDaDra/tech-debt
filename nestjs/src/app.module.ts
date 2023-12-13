@@ -4,6 +4,8 @@ import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from './exception-filters/http-exception.filter';
 import { CatsController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
+import { CommonModule } from './modules/common/common.module';
+import { LoggerModule } from './modules/logger/logger.module';
 
 @Module({
   imports: [
@@ -11,7 +13,9 @@ import { ConfigModule } from '@nestjs/config';
       envFilePath: ['.env.local', '.env'],
       isGlobal: true,
       cache: true,
-    })
+    }),
+    CommonModule,
+    LoggerModule,
   ],
   controllers: [
     CatsController
