@@ -1,17 +1,15 @@
-import { Inject, Injectable, Logger, OnModuleInit } from "@nestjs/common";
+import { Inject, Injectable, Logger, OnModuleInit } from '@nestjs/common';
 
 @Injectable()
 export class LoggerService implements OnModuleInit {
-  private readonly logger = new Logger('SystemLog');
+	private readonly logger = new Logger('SystemLog');
 
-  constructor(
-    @Inject('CONSTANT')
-    private readonly constant
-  ) {
-    console.log('Logger constructed');
-  }
+	constructor(
+		@Inject('CONSTANT')
+		private readonly constant,
+	) {}
 
-  onModuleInit() {
-    this.logger.log(this.constant.apiUrl);
-  }
+	onModuleInit() {
+		this.logger.log(this.constant.apiUrl);
+	}
 }

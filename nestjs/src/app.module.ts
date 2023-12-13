@@ -8,27 +8,25 @@ import { CommonModule } from './modules/common/common.module';
 import { LoggerModule } from './modules/logger/logger.module';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({
-      envFilePath: ['.env.local', '.env'],
-      isGlobal: true,
-      cache: true,
-    }),
-    CommonModule,
-    LoggerModule,
-  ],
-  controllers: [
-    CatsController
-  ],
-  providers: [
-    {
-      provide: APP_FILTER,
-      useClass: HttpExceptionFilter
-    }
-  ],
+	imports: [
+		ConfigModule.forRoot({
+			envFilePath: ['.env.local', '.env'],
+			isGlobal: true,
+			cache: true,
+		}),
+		CommonModule,
+		LoggerModule,
+	],
+	controllers: [CatsController],
+	providers: [
+		{
+			provide: APP_FILTER,
+			useClass: HttpExceptionFilter,
+		},
+	],
 })
 export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(RequestLoggerMiddleware).forRoutes('*');
-  }
+	configure(consumer: MiddlewareConsumer) {
+		consumer.apply(RequestLoggerMiddleware).forRoutes('*');
+	}
 }

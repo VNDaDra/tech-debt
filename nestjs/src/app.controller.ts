@@ -6,10 +6,9 @@ import { ApiParam, ApiTags } from '@nestjs/swagger';
 @ApiTags('cats')
 @Controller('cats')
 export class CatsController {
-
-  @ApiParam({ name: 'id', type: String })
-  @Get(':id')
-  findOneCat(@Param('id', ParseObjectIdPipe) id: ObjectId): string {
-    return `This is cat ${id}`;
-  }
+	@ApiParam({ name: 'id', type: String })
+	@Get(':id')
+	findOneCat(@Param('id', ParseObjectIdPipe) id: ObjectId): string {
+		return `This is cat ${id}`;
+	}
 }
