@@ -105,7 +105,7 @@ Attach custom metadata to route handlers through decorators
 - Reflector.getAllAndOverride(): override metadata has the same key
 - Reflector.getAllAndMerge(): merge metadata has the same key
 
-## 9. Lifecycle event
+## 9.Lifecycle event
 - OnModuleInit: Triggered once the module initialized
 - OnApplicationBootstrap: Triggered after all modules are loaded, but before listening for connections
 - OnModuleDestroy: Triggered once the module destroyed
@@ -122,3 +122,21 @@ The ConfigModule is an component of NestJS that facilitates the management and a
 - **load**: load custom configuration file
 ### 10.2 Config service
 Just inject `ConfigService` using constructor injection
+
+---
+
+# MongoDB
+MongoDB offer several advantages when considered for use
+- **Document-Oriented Databases**: record are stored as documents in compressed BSON files which can be retrieve directly in JSON format with many benefits
+  - Can store nested JSON to data object
+  - Documents map to objects in most popular programming languages
+  - Has flexible and dynamic schema, easy to adding or removing field
+- **Scale Cheaper**: have the flexibility to scale horizontally through sharding
+  - Add more servers depending on your needs. So server don't need too big and it's cheaper than one large server with the same total capacity
+  - No downtime required
+- **Query faster**: when your data is stored together, there's no need to join with any other collection
+- **Easy to change schema**: 
+
+## 16.Replica set
+
+### 
